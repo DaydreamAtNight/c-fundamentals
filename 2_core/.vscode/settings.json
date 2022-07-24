@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "ostream": "cpp",
-        "queue": "cpp",
-        "new": "cpp"
-    }
-}
