@@ -39,16 +39,17 @@ public:
     }
 };
 
-ostream& operator<<(ostream& os, Player& player)
+ostream& operator<<(ostream& os, const Player& player)
 {
-    os << "name: " << player.getName() << " score: " << player.getScore();
+    // os << "name: " << player.getName() << " score: " << player.getScore(); // constant can't be changed
+    os << "name: " << player.m_name << " score: " << player.m_score;
     return os;
 }
 
 template <class T>
-void printVector(T v)
+void printVector(const T v)
 {
-    for (typename T::iterator it = v.begin(); it != v.end(); it++)
+    for (typename T::const_iterator it = v.begin(); it != v.end(); it++)
     {
         cout << *it << endl;
 
@@ -63,13 +64,13 @@ void printVector(T v)
 }
 
 template <class T>
-void printScoreList(vector<T> &v)
+void printScoreList(const vector<T> &v)
 {
-    for (typename vector<T>::iterator it = v.begin(); it != v.end(); it++)
+    for (typename vector<T>::const_iterator it = v.begin(); it != v.end(); it++)
     {
         cout << "name: " << (*it).getName() << endl;
         cout << "Score list: ";
-        for (deque<int>::iterator itt = (*it).m_scoreList.begin(); itt != (*it).m_scoreList.end(); itt++)
+        for (deque<int>::const_iterator itt = (*it).m_scoreList.begin(); itt != (*it).m_scoreList.end(); itt++)
         {
             cout << (*itt) << ", ";
         }
@@ -79,13 +80,13 @@ void printScoreList(vector<T> &v)
 }
 
 template <class T>
-void printAllList(vector<T> &v)
+void printAllList(const vector<T> &v)
 {
-    for (typename vector<T>::iterator it = v.begin(); it != v.end(); it++)
+    for (typename vector<T>::const_iterator it = v.begin(); it != v.end(); it++)
     {
         cout << *it << endl;
         cout << "Score list: ";
-        for (deque<int>::iterator itt = (*it).m_scoreList.begin(); itt != (*it).m_scoreList.end(); itt++)
+        for (deque<int>::const_iterator itt = (*it).m_scoreList.begin(); itt != (*it).m_scoreList.end(); itt++)
         {
             cout << (*itt) << ", ";
         }
