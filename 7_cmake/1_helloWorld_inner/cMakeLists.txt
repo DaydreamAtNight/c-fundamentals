@@ -1,0 +1,5 @@
+PROJECT (Hello)
+SET (SRC_LIST 1_helloWorld.cpp)
+MESSAGE(STATUS "This is a BINARY dir" ${Hello_BINARY_DIR})
+MESSAGE(STATUS "This is a SOURCE dir" ${Hello_SOURCE_DIR})
+ADD_EXECUTABLE (Hello ${SRC_LIST})
