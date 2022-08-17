@@ -46,3 +46,8 @@ int main(int argc, char const *argv[])
 
 // compile with
 // clang++ --std=c++11 main.cpp src/s*  -Iinclude
+
+// or cmake, using makefile
+
+// tasks.json and launch.json enable the fully automatic debugging
+// see https://www.bilibili.com/video/BV1fy4y1b7TC?p=23
